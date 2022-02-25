@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 
 @CucumberOptions(
-        features = "features",
+        features = "src/test/resources/features",
         glue={"com.regiewby.steps"},
         plugin = {"pretty"},
         monochrome = true
