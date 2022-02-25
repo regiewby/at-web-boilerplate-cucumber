@@ -1,4 +1,4 @@
-package factories;
+package com.regiewby.factories;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-import java.net.MalformedURLException;
 
 /**
  * @author regiewby on 25/02/22
@@ -15,7 +14,7 @@ import java.net.MalformedURLException;
  */
 public class BrowserFactory {
 
-    public WebDriver launchBrowser(String browser) throws MalformedURLException {
+    public WebDriver launchBrowser(String browser) {
 
         WebDriver webDriver = null;
 
@@ -43,6 +42,7 @@ public class BrowserFactory {
 
             webDriver = new FirefoxDriver(options);
         }
+
 
         return webDriver;
     }

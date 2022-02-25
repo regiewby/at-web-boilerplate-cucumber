@@ -1,4 +1,4 @@
-package factories;
+package com.regiewby.factories;
 
 import org.openqa.selenium.WebDriver;
 
@@ -32,6 +32,7 @@ public class DriverFactory {
     public void closeBrowser() {
         driver.get().close();
         driver.remove();
+
     }
 
 

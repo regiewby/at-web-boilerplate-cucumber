@@ -1,4 +1,4 @@
-package factories;
+package com.regiewby.factories;
 
 import com.aventstack.extentreports.ExtentTest;
 
