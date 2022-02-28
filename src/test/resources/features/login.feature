@@ -1,4 +1,5 @@
 Feature: User Authentication
+
   Scenario Outline: As a user i should be login with valid credential
     Given I already in login page
     When I input the username field with <username>

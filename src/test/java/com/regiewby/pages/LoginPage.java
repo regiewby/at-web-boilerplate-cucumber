@@ -4,7 +4,6 @@ import com.regiewby.factories.DriverFactory;
 import com.regiewby.helpers.SeleniumHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 /**
  * @author regiewby on 26/02/22
@@ -20,16 +19,15 @@ public class LoginPage {
     SeleniumHelper seleniumHelper = new SeleniumHelper(webDriver);
 
     public void input_username(String userName){
-        seleniumHelper.SETTEXT(USERNAME, userName);
+        seleniumHelper.sendKeys(USERNAME, userName);
     }
 
     public void input_password(String password){
-        seleniumHelper.SETTEXT(PASSWORD, password);
+        seleniumHelper.sendKeys(PASSWORD, password);
     }
 
     public void click_btn_login(){
-        seleniumHelper.CLICK(LOGIN_BTN);
-
+        seleniumHelper.click(LOGIN_BTN);
     }
 
 }
