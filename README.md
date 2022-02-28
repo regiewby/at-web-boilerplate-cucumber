@@ -4,7 +4,7 @@ This is a boilerplate of WEB Automation with Cucumber TestNg
 
 ## Getting Started
 
-1. Make sure you already install Java SE Development Kit or you can [download here](actual URL to navigate)
+1. Make sure you already install Java SE Development Kit or you can [https://www.oracle.com/java/technologies/downloads/](download here)
 
 
 ## Folder Structure
