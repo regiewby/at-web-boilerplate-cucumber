@@ -2,7 +2,6 @@ package com.regiewby.helpers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 /**
  * @author regiewby on 26/02/22
@@ -16,12 +15,14 @@ public class SeleniumHelper {
         this.webDriver = driver;
     }
 
-    public void CLICK(By locator){
+    public void click(By locator){
         webDriver.findElement(locator).click();
+//        ExtentReportFactory.getInstance().getExtent().log(Status.PASS, "CLICK ==> "+locator);
     }
 
-    public void SETTEXT(By locator, String value){
+    public void sendKeys(By locator, String value){
         webDriver.findElement(locator).sendKeys(value);
+//        ExtentReportFactory.getInstance().getExtent().log(Status.PASS, "SETTEXT ==> "+locator+ " || VALUES ==> "+value);
     }
 
 
