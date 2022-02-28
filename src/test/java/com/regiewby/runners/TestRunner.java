@@ -13,12 +13,13 @@ import java.util.concurrent.TimeUnit;
  * @project at-web-boilerplate-cucumber
  */
 
-
 @CucumberOptions(
         features = "src/test/resources/features",
         glue={"com.regiewby.steps"},
-        plugin = {"pretty"},
-        monochrome = true
+        plugin = {
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                "json:target/cucumber-report.json"
+        }
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {

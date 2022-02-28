@@ -15,7 +15,7 @@ public class LoginStep {
 
     @Given("I already in login page")
     public void i_already_in_login_page() {
-        System.out.println("login page");
+        System.out.println("");
     }
 
     @When("I input the username field with standard_user")
@@ -33,11 +33,6 @@ public class LoginStep {
         loginPage.click_btn_login();
     }
 
-    @Then("I should be able to redirect to homepage")
-    public void i_should_be_able_to_redirect_to_homepage() {
-        System.out.println("redirect");
-    }
-
     @When("I input the username field with problem_user")
     public void i_input_the_username_field_with_problem_user() {
         loginPage.input_username("problem_user");
@@ -46,6 +41,10 @@ public class LoginStep {
     @When("I input the username field with performance_glitch_user")
     public void i_input_the_username_field_with_performance_glitch_user() {
         loginPage.input_username("performance_glitch_user");
+    }
 
+    @Then("I should be able to redirect to homepage")
+    public void i_should_be_able_to_redirect_to_homepage() {
+        System.out.println("");
     }
 }
