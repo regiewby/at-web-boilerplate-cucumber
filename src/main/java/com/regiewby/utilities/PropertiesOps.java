@@ -16,7 +16,7 @@ public class PropertiesOps {
     public static String getPropertyValueByKey(String key) {
 
         //1. load data from properties file
-        String propFilePath = System.getProperty("user.dir")+"/src/test/java/com/regiewby/properties/config.properties";
+        String propFilePath = System.getProperty("user.dir")+"/src/test/resources/run-config.properties";
         FileInputStream fis;
         try {
             fis = new FileInputStream(propFilePath);

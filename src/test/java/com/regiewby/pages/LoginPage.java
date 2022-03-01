@@ -36,7 +36,7 @@ public class LoginPage {
 
     public void loginSuccess(){
         expectLoginPage();
-        input_password("standard_user");
+        input_username("standard_user");
         input_password("secret_sauce");
         click_btn_login();
 

@@ -2,6 +2,7 @@ package com.regiewby.runners;
 
 import com.regiewby.factories.BrowserFactory;
 import com.regiewby.factories.DriverFactory;
+import com.regiewby.utilities.PropertiesOps;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.openqa.selenium.WebDriver;
@@ -24,11 +25,18 @@ import java.util.concurrent.TimeUnit;
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    BrowserFactory bf = new BrowserFactory();
+
+    @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 
     @Parameters("browserType")
     @BeforeMethod
-    public void setupBrowser(String browserType) {
+    public void setupBrowser() {
+        BrowserFactory bf = new BrowserFactory();
+        String browserType = PropertiesOps.getPropertyValueByKey("BROWSER_TYPE");
         DriverFactory.getInstance().setDriver(bf.launchBrowser(browserType));
         WebDriver webDriver = DriverFactory.getInstance().getDriver();
 
