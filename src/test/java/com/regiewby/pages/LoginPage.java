@@ -30,4 +30,18 @@ public class LoginPage {
         seleniumHelper.click(LOGIN_BTN);
     }
 
+    public void expectLoginPage(){
+        seleniumHelper.elementShouldBeVisible(USERNAME);
+    }
+
+    public void loginSuccess(){
+        expectLoginPage();
+        input_password("standard_user");
+        input_password("secret_sauce");
+        click_btn_login();
+
+        HomePage homePage = new HomePage();
+        homePage.expectHomePage();
+    }
+
 }

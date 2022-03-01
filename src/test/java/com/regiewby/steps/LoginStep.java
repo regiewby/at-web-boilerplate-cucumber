@@ -1,5 +1,6 @@
 package com.regiewby.steps;
 
+import com.regiewby.pages.HomePage;
 import com.regiewby.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,7 +16,7 @@ public class LoginStep {
 
     @Given("I already in login page")
     public void i_already_in_login_page() {
-        System.out.println("");
+        loginPage.expectLoginPage();
     }
 
     @When("I input the username field with standard_user")
@@ -45,6 +46,7 @@ public class LoginStep {
 
     @Then("I should be able to redirect to homepage")
     public void i_should_be_able_to_redirect_to_homepage() {
-        System.out.println("");
+        HomePage homePage = new HomePage();
+        homePage.expectHomePage();
     }
 }
