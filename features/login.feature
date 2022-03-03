@@ -1,6 +1,6 @@
 Feature: User Authentication
 
-  Scenario Outline: As a user i should be login with valid credential
+  Scenario Outline: As a user i should be able to login with valid credential
     Given I already in login page
     When I input the username field with <username>
     And I input the password field with <password>
