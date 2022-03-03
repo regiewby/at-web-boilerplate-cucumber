@@ -4,6 +4,11 @@ import com.regiewby.factories.DriverFactory;
 import com.regiewby.helpers.SeleniumHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author regiewby on 26/02/22
@@ -11,37 +16,44 @@ import org.openqa.selenium.WebDriver;
  */
 public class LoginPage {
 
-    By USERNAME = By.id("user-name");
-    By PASSWORD = By.id("password");
-    By LOGIN_BTN = By.id("login-button");
+    private WebDriver driver;
 
-    WebDriver webDriver = DriverFactory.getInstance().getDriver();
-    SeleniumHelper seleniumHelper = new SeleniumHelper(webDriver);
-
-    public void input_username(String userName){
-        seleniumHelper.sendKeys(USERNAME, userName);
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, this);
     }
 
-    public void input_password(String password){
-        seleniumHelper.sendKeys(PASSWORD, password);
+    @FindBy(id = "user-name")
+    private WebElement txtUserName;
+
+    @FindBy(id = "password")
+    private WebElement txtPassword;
+
+    @FindBy(id = "login-button")
+    private WebElement btnLogin;
+
+    public void inputUserName(String userName){
+        txtUserName.sendKeys(userName);
     }
 
-    public void click_btn_login(){
-        seleniumHelper.click(LOGIN_BTN);
+    public void inputPassword(String password){
+        txtPassword.sendKeys(password);
+    }
+
+    public void clickBtnLogin(){
+        btnLogin.click();
     }
 
     public void expectLoginPage(){
-        seleniumHelper.elementShouldBeVisible(USERNAME);
+        txtUserName.isDisplayed();
+        txtPassword.isDisplayed();
+        btnLogin.isDisplayed();
     }
 
-    public void loginSuccess(){
-        expectLoginPage();
-        input_username("standard_user");
-        input_password("secret_sauce");
-        click_btn_login();
-
-        HomePage homePage = new HomePage();
-        homePage.expectHomePage();
+    public void login(String userName, String password){
+        txtUserName.sendKeys(userName);
+        txtPassword.sendKeys(password);
+        btnLogin.click();
     }
-
 }

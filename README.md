@@ -1,7 +1,8 @@
 # at-web-boilerplate-cucumber
+at-web-boilerplate-cucumber : Automation Testing Using Java
 
-This is a boilerplate of WEB Automation with Cucumber TestNg
-
+selenium-cucumber is a behavior driven development (BDD) approach to write automation test script to test Web. 
+Written using Java as JavaIt is cross-platform, open source and free.
 ## Getting Started
 
 1. Make sure you already install Java SE Development Kit or you can [download here](https://www.oracle.com/java/technologies/downloads/)

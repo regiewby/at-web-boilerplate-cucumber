@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "features",
         glue={"com.regiewby.steps"},
         plugin = {
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
