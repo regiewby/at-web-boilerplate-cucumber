@@ -35,14 +35,14 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @Parameters("browserType")
     @BeforeMethod
     public void setupBrowser() {
-        BrowserFactory bf = new BrowserFactory();
         String browserType = PropertiesOps.getPropertyValueByKey("BROWSER_TYPE");
+        String url = PropertiesOps.getPropertyValueByKey("URL");
+        BrowserFactory bf = new BrowserFactory();
+
         DriverFactory.getInstance().setDriver(bf.launchBrowser(browserType));
         WebDriver webDriver = DriverFactory.getInstance().getDriver();
-
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        webDriver.navigate().to("https://www.saucedemo.com/");
+        webDriver.navigate().to(url);
     }
 
     @AfterMethod
