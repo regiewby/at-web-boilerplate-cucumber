@@ -1,8 +1,5 @@
 package com.regiewby.pages;
 
-import com.regiewby.factories.DriverFactory;
-import com.regiewby.helpers.SeleniumHelper;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
