@@ -10,13 +10,20 @@ it is run on your local PC, and it is open source and free.
 ## Folder Structure
 <br/>The folder structure is as following:
 
-    .
-    ├── ...
-    ├── features                           # gherkin test cases 
-    ├── test                               # Test files
-    │    │── pages                         # Page Object Factory
-    │    │── runners                       # TestNg Runner
-    │    │── steps                         # Step Definitions
+    at-web-boilerplate-cucumber
+    │ 
+    ├─ features                           # gherkin test cases 
+    ├─ src
+    │   ├─ test                               # Test files
+    │         ├─ pages                         # Page Object Factory
+    │         ├─ runners                       # TestNg Runner
+    │         ├─ steps                         # Step Definitions
+    │   ├─ main 
+    │         ├─ factories                     # implement design pattern factory for init an objects
+    │         └─ utilities                     # utility
+    ├─ README.md
+    ├─ pom.xml
+    ├─ testng.xml
     └─ ...   
     
 
