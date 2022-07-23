@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 @CucumberOptions(
         features = "features",
         glue={"com.regiewby.steps"},
+        tags = "@smoke_test",
         plugin = {
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/cucumber-report.json"
@@ -24,7 +25,6 @@ import java.util.concurrent.TimeUnit;
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
-
 
     @Override
     @DataProvider(parallel = true)

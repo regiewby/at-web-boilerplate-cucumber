@@ -9,17 +9,15 @@ import org.openqa.selenium.WebDriver;
 public class DriverFactory {
 
 
+    private static final DriverFactory instance  = new DriverFactory();
+    ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
     private DriverFactory(){
     }
-
-    private static DriverFactory instance  = new DriverFactory();
 
     public static DriverFactory getInstance() {
         return instance;
     }
-
-    ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-
 
     public WebDriver getDriver() {
         return driver.get();
@@ -32,8 +30,5 @@ public class DriverFactory {
     public void closeBrowser() {
         driver.get().close();
         driver.remove();
-
     }
-
-
 }
