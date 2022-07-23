@@ -15,10 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HomePage {
 
-    private WebDriver driver;
-
     public HomePage(WebDriver driver) {
-        this.driver = driver;
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         PageFactory.initElements(driver, this);
     }
